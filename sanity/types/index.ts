@@ -1,4 +1,5 @@
 // types/property.ts
+import { Image as SanityImage } from "sanity";
 
 export type Property = {
   _id: string; // Sanity document ID
@@ -40,6 +41,31 @@ export type Image = {
     width: number;
   };
 };
+
+export interface Listing {
+  _id: string;
+  property: {
+    _ref: string;
+    _type: string;
+  };
+  listingName: string;
+  description: string;
+  price: number;
+  minimumContractInMonth: number;
+  floor: number;
+  size: number;
+  bedroom: number;
+  bathroom: number;
+  furniture: "fully-fitted" | "fully-furnished";
+  status: "ready-to-move-in" | "finishing-2026";
+  listingType: "sale" | "rent";
+  facingDirection: "N" | "S" | "E" | "W" | "NE" | "NW" | "SE" | "SW";
+  createdAt: string; // ISO date string
+  listingHero: SanityImage;
+  listingPhoto: SanityImage[];
+  floorPlan: SanityImage;
+  statusActive: "active" | "inactive";
+}
 
 export type File = {
   _type: "file";
