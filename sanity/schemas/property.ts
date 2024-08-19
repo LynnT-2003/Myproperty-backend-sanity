@@ -21,12 +21,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: "developer",
-      title: "Developer",
-      type: "reference",
-      to: [{ type: "developer" }],
-    }),
-    defineField({
       name: "description",
       title: "Description",
       type: "text",
