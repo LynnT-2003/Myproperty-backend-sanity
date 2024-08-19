@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetchAllProperties } from "@/sanity/services/PropertyServices";
 import { Listing, Property } from "@/sanity/types";
 import { fetchAllListings } from "@/sanity/services/ListingServices";
+import { urlForImage } from "@/sanity/lib/image";
 
 const Home = () => {
   const [properties, setProperties] = useState<Property[]>([]);
@@ -44,6 +45,7 @@ const Home = () => {
             <p>
               {listing.listingName} - {listing.description}
             </p>
+            <img src={urlForImage(listing.listingPhoto[0])} alt="image" />
             <p>{listing.property._ref}</p>
           </div>
         ))}
