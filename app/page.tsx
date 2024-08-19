@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { fetchAllProperties } from "@/sanity/services/PropertyServices";
-import { Property } from "@/sanity/types";
+import { Listing, Property } from "@/sanity/types";
+import { fetchAllListings } from "@/sanity/services/ListingServices";
 
 const Home = () => {
   const [properties, setProperties] = useState<Property[]>([]);
+  const [listings, setListings] = useState<Listing[]>([]);
 
   useEffect(() => {
     const getProperties = async () => {
@@ -12,15 +14,38 @@ const Home = () => {
       setProperties(data);
     };
 
+    const getListings = async () => {
+      const data = await fetchAllListings();
+      setListings(data);
+    };
+
     getProperties();
+    getListings();
   }, []);
 
   return (
     <div>
-      <h1>Properties</h1>
+      <h1 className="underline text-xl pb-2">Properties</h1>
       <ul>
         {properties.map((property) => (
-          <li key={property._id}>{property.title}</li>
+          <div key={property._id} className="pb-4">
+            <p>{property._id}</p>
+            <p>
+              {property.title}: {property.description}
+            </p>
+          </div>
+        ))}
+      </ul>
+      <br />
+      <h1 className="underline text-xl pb-2">Listings</h1>
+      <ul>
+        {listings.map((listing) => (
+          <div key={listing._id} className="pb-4">
+            <p>
+              {listing.listingName} - {listing.description}
+            </p>
+            <p>{listing.property._ref}</p>
+          </div>
         ))}
       </ul>
     </div>
