@@ -51,6 +51,8 @@ export interface Listing {
   listingName: string;
   description: string;
   price: number;
+  minPrice: number;
+  maxPrice: number;
   minimumContractInMonth: number;
   floor: number;
   size: number;

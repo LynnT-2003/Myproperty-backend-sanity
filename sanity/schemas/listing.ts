@@ -27,6 +27,16 @@ export default defineType({
       type: "number",
     }),
     defineField({
+      name: "minPrice",
+      title: "MinPrice",
+      type: "number",
+    }),
+    defineField({
+      name: "maxPrice",
+      title: "MaxPrice",
+      type: "number",
+    }),
+    defineField({
       name: "minimumContractInMonth",
       title: "Minimum Contract In Month",
       type: "number",
