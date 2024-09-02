@@ -49,11 +49,6 @@ export default defineType({
               title: "Facility Type",
             },
             {
-              name: "facilityName",
-              type: "string",
-              title: "Facility Name",
-            },
-            {
               name: "description",
               type: "text",
               title: "Facility Description",

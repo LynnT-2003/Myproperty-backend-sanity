@@ -22,7 +22,6 @@ export type Property = {
 
 export type Facility = {
   facilityType: string;
-  facilityName: string;
   description: string;
   photos: Image[];
 };
