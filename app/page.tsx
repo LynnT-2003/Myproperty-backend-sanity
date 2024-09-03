@@ -45,7 +45,7 @@ const Home = () => {
             <p>
               {listing.listingName} - {listing.description}
             </p>
-            <img src={urlForImage(listing.listingPhoto[0])} alt="image" />
+            <img src={urlForImage(listing.listingHero)} alt="image" />
             <p>{listing.property._ref}</p>
           </div>
         ))}
