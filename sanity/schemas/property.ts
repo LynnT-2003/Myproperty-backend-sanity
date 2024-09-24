@@ -36,6 +36,16 @@ export default defineType({
       type: "number",
     }),
     defineField({
+      name: "latitude",
+      title: "Latitude",
+      type: "number",
+    }),
+    defineField({
+      name: "longitude",
+      title: "Longitude",
+      type: "number",
+    }),
+    defineField({
       name: "facilities",
       type: "array",
       title: "Facilities",

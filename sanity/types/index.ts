@@ -12,6 +12,8 @@ export type Property = {
   description: string;
   minPrice: number;
   maxPrice: number;
+  latitude: number;
+  longitude: number;
   facilities: Facility[];
   tags: string[];
   propertyHero: Image;
